@@ -16,16 +16,16 @@ fi
 mkdir -p ${INSTALL_DIR}
 
 
-LAMBDA_EXPRESSION=${BUILD_DIR}/lambda_expression
-if [ -d ${LAMBDA_EXPRESSION} ]; then
-	rm -r ${LAMBDA_EXPRESSION}
+PROJECT_BUILD_DIR=${BUILD_DIR}
+if [ -d ${BUILD_DIR} ]; then
+	rm -r ${BUILD_DIR}
 fi
-mkdir -p ${LAMBDA_EXPRESSION}
-cd ${LAMBDA_EXPRESSION}
+mkdir -p ${PROJECT_BUILD_DIR}
+cd ${PROJECT_BUILD_DIR}
 
 cmake \
 	-D CMAKE_CXX_COMPILER=${CXX_COMPILER} \
 	-D CMAKE_INSTALL_PREFIX=${INSTALL_DIR} \
-	${CPP_ROOT}/src/lambda_expression
+	${CPP_ROOT}
 
 cmake --build . --target install -- -j${JOB}
