@@ -102,11 +102,17 @@ Nếu không gian địa chỉ của node cha và con là được xác định 
 sudo apt-get install -y build-essential
 sudo apt-get install -y libncurses5 libncurses5-dev
 sudo apt-get install -y bison flex libssl-dev
+sudo apt-get install lzop
+sudo apt-get install u-boot-tools
+
 ```
+
+
 
 ### Build
 
 ```
+dtc -I dtb -O dts -o am335x-boneblack.dts am335x-boneblack.dtb
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LOADADDR=0x80000000 uImage dtbs
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- modules
 ```
