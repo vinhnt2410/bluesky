@@ -51,7 +51,7 @@ hs_err_pid*
 .gradle
 build/
 install/
-
+build-x86-gnu-linux/
 # Ignore Gradle GUI config
 gradle-app.setting
 
